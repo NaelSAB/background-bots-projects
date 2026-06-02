@@ -1,3 +1,5 @@
+import time
+
 import requests
 import smtplib
 import os
@@ -71,7 +73,7 @@ def job():
                 msg=article
             )
 
-schedule.every().day.at("09:00").run(job)
+schedule.every().day.at("06:00").do(job)
 
 while True:
     schedule.run_pending()
