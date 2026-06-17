@@ -18,6 +18,3 @@ class ScrapeWeb:
         self.addresses = [address.text.strip() for address in links_elements]
         prices_elements = self.soup.select("span.PropertyCardWrapper__StyledPriceLine")
         self.prices = [a.text.split("+")[0].split("/")[0] for a in prices_elements]
-        # print(len(self.links))
-        # print(len(self.addresses))
-        # print(len(self.prices))
