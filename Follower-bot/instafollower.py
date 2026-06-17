@@ -28,12 +28,12 @@ class InstaFollower:
             save_login = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//div[@role="button" and text()="Not now"]')))
             save_login.click()
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f"Unexpected error: {e}")
         try:
             Turn_on_notifications = self.wait.until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/button[2]')))
             Turn_on_notifications.click()
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f"Unexpected error: {e}")
 
 
     def find_followers(self, account):
@@ -42,10 +42,6 @@ class InstaFollower:
         followers = self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[contains(text(), "followers")]')))
         followers.click()
         time.sleep(2)
-        # model = self.driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]')
-        # for i in range(10):
-        #     self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", model)
-        #     time.sleep(2)
 
     def follow(self):
         all_buttons = self.driver.find_elements(By.CSS_SELECTOR, 'button._aswp._aswr')
